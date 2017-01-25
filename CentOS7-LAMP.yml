@@ -39,7 +39,15 @@
         owner: root
         group: apache
         mode: 'u=rwX,g=rwX,o=rX'
+        setype: httpd_sys_rw_content_t
         recurse: yes
+
+    - name: 'SELinux: Context'
+      sefcontext:
+        target: '/var/www/html(/.*)?'
+        setype: httpd_sys_rw_content_t
+        state: present
+        
 
     - name: 'Test File: test.php'
       blockinfile:
