@@ -27,7 +27,11 @@
         - mariadb
 
     - name: 'Firewall: Open http'
-      firewalld: service=http permanent=true state=enabled immediate=yes
+      firewalld:
+        service: http
+        permanent: true
+        state: enabled
+        immediate: yes
 
     - name: 'DocumentRoot: Permissions'
       file:
