@@ -1,6 +1,6 @@
 ---
-- hosts: 127.0.0.1
-  connection: local
+- hosts: all
+  become: yes
   tasks:
     - name: 'Packages: Install'
       yum: name={{ item }} state=latest
@@ -74,7 +74,6 @@
         DELETE FROM `mysql`.`db` WHERE `Db`="test" OR `Db`="test\\_%";
         FLUSH PRIVILEGES;
         '
-
     - name: 'MySQL: Update /root/.my.cnf'
       blockinfile:
         dest: /root/.my.cnf
@@ -86,3 +85,4 @@
         owner: root
         group: root
         mode: 0600
+
