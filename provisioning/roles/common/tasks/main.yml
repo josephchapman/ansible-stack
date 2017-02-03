@@ -1,0 +1,9 @@
+---
+# This playbook contains common plays that will be run on all nodes.
+
+- include: pre.yml
+- include: install_httpd.yml
+- include: install_php.yml
+- include: install_mariadb.yml
+
+

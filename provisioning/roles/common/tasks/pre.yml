@@ -1,0 +1,11 @@
+---
+- name: 'Packages: Install'
+  yum: name={{ item }} state=latest
+  with_items:
+    - pwgen
+    - policycoreutils-python
+
+- name: 'Services: Start and Enable'
+  systemd: name={{ item }} state=started enabled=yes masked=no
+  with_items:
+    - firewalld
