@@ -3,11 +3,14 @@
   yum: name={{ item }} state=latest
   with_items:
     - mariadb-server
+    - pwgen
 
 - name: 'Services: Start and Enable'
-  systemd: name={{ item }} state=started enabled=yes masked=no
-  with_items:
-    - mariadb
+  systemd:
+    name: mariadb
+    state: started
+    enabled: yes
+    masked: no
 
 - name: 'MySQL: Generate new root password'
   command: pwgen -B1ns 24

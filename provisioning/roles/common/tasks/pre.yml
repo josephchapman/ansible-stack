@@ -2,7 +2,6 @@
 - name: 'Packages: Install'
   yum: name={{ item }} state=latest
   with_items:
-    - pwgen
     - policycoreutils-python
 
 - name: 'Services: Start and Enable'
