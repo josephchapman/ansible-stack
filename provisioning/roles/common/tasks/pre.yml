@@ -1,10 +1,15 @@
 ---
+# `policycoreutils-python` required for SELinux tools
+# `MySQL-python` required for Ansible MySQL modules
 - name: 'Packages: Install'
   yum: name={{ item }} state=latest
   with_items:
     - policycoreutils-python
+    - MySQL-python
 
 - name: 'Services: Start and Enable'
-  systemd: name={{ item }} state=started enabled=yes masked=no
-  with_items:
-    - firewalld
+  systemd:
+    name: firewalld
+    state: started
+    enabled: yes
+    masked: no
