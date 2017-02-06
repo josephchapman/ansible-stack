@@ -1,3 +1,4 @@
 ---
 - include: install_php-fpm.yml
 - include: configure_php_for_mysql.yml
+- include: install_opcache.yml
