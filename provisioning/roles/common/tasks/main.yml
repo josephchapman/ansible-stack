@@ -1,10 +1,15 @@
 ---
-# This playbook contains common plays that will be run on all nodes.
+# `policycoreutils-python` required for SELinux tools
+# `MySQL-python` required for Ansible MySQL modules
+- name: 'Packages: Install'
+  yum: name={{ item }} state=latest
+  with_items:
+    - policycoreutils-python
+    - MySQL-python
 
-- include: pre.yml
-- include: install_httpd.yml
-- include: install_php-fpm.yml
-- include: install_mariadb.yml
-- include: configure_httpd_for_php-fpm.yml
-- include: configure_php_for_mysql.yml
-- include: install_wordpress.yml
+- name: 'Services: Start and Enable'
+  systemd:
+    name: firewalld
+    state: started
+    enabled: yes
+    masked: no

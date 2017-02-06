@@ -1,5 +1,8 @@
 ---
-# This playbook deploys the whole application stack in this site.
+# To do:
+# * Add a CentOS 7 check.  Fail if not CentOS 7.
+# * Add an SELinux check.  Only attempt SELinux options if enabled.
+# * Add Redis, Varnish, Magento options.
 
 - name: apply common configuration to all nodes
   hosts: all
@@ -7,3 +10,7 @@
 
   roles:
     - common
+    - mariadb
+    - php-fpm
+    - httpd
+    - wordpress
