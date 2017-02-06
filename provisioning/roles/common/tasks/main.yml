@@ -3,7 +3,7 @@
 
 - include: pre.yml
 - include: install_httpd.yml
-- include: install_php.yml
+- include: install_php-fpm.yml
 - include: install_mariadb.yml
-
-
+- include: configure_httpd_for_php-fpm.yml
+- include: configure_php_for_mysql.yml

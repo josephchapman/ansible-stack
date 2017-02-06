@@ -1,0 +1,6 @@
+---
+- name: 'Packages: Install'
+  yum:
+    name: php-mysql
+    state: latest
+  notify: restart php-fpm
