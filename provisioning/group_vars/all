@@ -1,5 +1,8 @@
 ---
 
-# opcache
+
+# PHP-FPM
+
+## OpCache
 memory_consumption: 32
 max_accelerated_files: 1000

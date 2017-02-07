@@ -1,0 +1,6 @@
+---
+- name: 'Configure PHP for Redis'
+  yum:
+    name: php-pecl-redis
+    state: latest
+  notify: restart php-fpm

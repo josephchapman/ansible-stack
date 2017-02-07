@@ -1,7 +1,7 @@
 ---
 - name: 'httpd: Add config'
   template:
-    src: php-fpm.conf
+    src: php-fpm.conf.j2
     dest: /etc/httpd/conf.d/php-fpm.conf
     owner: root
     group: root
