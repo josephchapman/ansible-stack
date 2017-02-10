@@ -14,4 +14,4 @@
     - redis
     - php-fpm
     - httpd
-    - wordpress
+#    - wordpress
