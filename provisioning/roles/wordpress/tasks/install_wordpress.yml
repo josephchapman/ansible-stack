@@ -1,4 +1,10 @@
 ---
+- name: 'Install PHP dependencies'
+  yum:
+    name: php-mysql,php-gd
+    state: latest
+  notify: restart php-fpm
+
 - name: Download WordPress
   get_url:
     url: https://wordpress.org/latest.tar.gz
