@@ -2,7 +2,9 @@
 
 I have no idea what I'm doing.
 
-## VirtualBox + Vagrant with `ansible_local` provisioner method
+## Method 1: From your local machine, provision a VM
+
+This uses VirtualBox + Vagrant with the `ansible_local` provisioner.
 
 Install `vagrant` and `virtualbox`, then:
 ```
@@ -13,7 +15,9 @@ $ cd ansible
 $ vagrant up
 ```
 
-## Ansible method
+## Method 2: Directly on a server
+
+This method uses `ansible` locally.
 
 Install `ansible`, then:
 ```
