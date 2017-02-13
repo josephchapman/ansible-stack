@@ -6,6 +6,8 @@ I have no idea what I'm doing.
 
 This uses VirtualBox + Vagrant with the `ansible_local` provisioner.
 
+Note: This method creates a VM with an IP address of `192.168.33.10`.  You will need to check that this does not conflict on your network.  Adjust `config.vm.network` in `Vagrantfile` if necessary.
+
 Install `vagrant` and `virtualbox`, then:
 ```
 $ git clone https://github.com/josephchapman/ansible.git

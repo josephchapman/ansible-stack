@@ -3,7 +3,6 @@
 # * Add a CentOS 7 check.  Fail if not CentOS 7.
 # * Add an SELinux check.  Only attempt SELinux options if enabled.
 # * Add Varnish
-# * Finish Magento
 
 - name: apply common configuration to all nodes
   hosts: all

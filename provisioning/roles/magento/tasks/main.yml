@@ -47,11 +47,15 @@
   notify: restart php-fpm
 
 - name: 'Apache AllowOverride for /var/www/html/'
-  command: sed -ie '151s/AllowOverride None/AllowOverride All/' /etc/httpd/conf/httpd.conf
+  template:
+    src: magento.conf.j2
+    dest: /etc/httpd/conf.d/magento.conf
+    owner: root
+    group: root
+    mode: 0644
   notify: restart httpd
 
-
-- name: 'Add a wordpress user'
+- name: 'Add a magento user'
   user:
     name: magento
     home: /home/magento/
